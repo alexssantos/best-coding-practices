@@ -1,4 +1,7 @@
-﻿namespace Domain.Cliente.Aggregate.Entity
+﻿using Domain.Cliente.Aggregate.Enum;
+using Domain.Cliente.Aggregate.ValueObject;
+
+namespace Domain.Cliente.Aggregate.Entity
 {
 	public class Endereco
 	{
@@ -8,7 +11,7 @@
 		public string Complemento { get; set; }
 		public string Cidade { get; set; }
 		public string Estado { get; set; }
-		public string CEP { get; set; }
+		public CEP CEP { get; set; }
 		public Tipo Tipo { get; set; }
 	}
 }
