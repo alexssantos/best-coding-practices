@@ -6,6 +6,7 @@ namespace Domain.Cliente.Aggregate.ValueObject
 	public class Filiacao
 	{
 		public string Nome { get; set; }
+		public DataNascimento DataNascimento { get; set; }
 		public string NomeFormatado => ValorFormatado(this.Nome);
 
 		public Filiacao()
