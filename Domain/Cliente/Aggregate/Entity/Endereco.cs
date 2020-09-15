@@ -8,6 +8,7 @@
 		public string Complemento { get; set; }
 		public string Cidade { get; set; }
 		public string Estado { get; set; }
-		public int Tipo { get; set; }
+		public string CEP { get; set; }
+		public Tipo Tipo { get; set; }
 	}
 }
