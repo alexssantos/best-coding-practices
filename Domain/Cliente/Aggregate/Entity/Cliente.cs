@@ -8,7 +8,7 @@ namespace Domain.Cliente.Aggregate.Entity
 		public int Id { get; set; }
 
 		public string Nome { get; set; }
-		public string CPF { get; set; }
+		public CPF CPF { get; set; }
 		public DateTime DataNascimento { get; set; }
 		public int Idade { get; set; }
 		public string NomeMae { get; set; }
