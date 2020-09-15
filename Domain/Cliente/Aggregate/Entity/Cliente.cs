@@ -15,6 +15,7 @@ namespace Domain.Cliente.Aggregate.Entity
 		public DataNascimento DataNascimento { get; set; }
 		public Filiacao Mae { get; set; }
 		public Filiacao Pai { get; set; }
+		public Password Password { get; set; }
 
 		//encapsulando endereço e obrigando a passar pela regra ao adicionar.
 		private IList<Endereco> Enderecos { get; set; }
@@ -63,5 +64,14 @@ namespace Domain.Cliente.Aggregate.Entity
 			this.Enderecos.Add(endereco);
 		}
 
+		public void GerarPassword()
+		{
+			this.Password = Password.GerarPassword();
+		}
+
+		public void AdicionarPassword(string password)
+		{
+			this.Password = new Password(password);
+		}
 	}
 }
