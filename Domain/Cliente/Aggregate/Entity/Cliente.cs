@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Domain.Cliente.Aggregate.ValueObject;
+using System;
 using System.Collections.Generic;
 
 namespace Domain.Cliente.Aggregate.Entity
@@ -11,8 +12,8 @@ namespace Domain.Cliente.Aggregate.Entity
 		public CPF CPF { get; set; }
 		public DateTime DataNascimento { get; set; }
 		public int Idade { get; set; }
-		public string NomeMae { get; set; }
-		public string NomePai { get; set; }
+		public Filiacao Mae { get; set; }
+		public Filiacao Pai { get; set; }
 
 		public IList<Endereco> Enderecos { get; set; }
 		public IList<Telefone> Telefones { get; set; }
