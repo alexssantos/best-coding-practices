@@ -8,6 +8,25 @@ namespace Domain.Cliente.Aggregate.Entity
 {
 	public class Cliente
 	{
+		internal Cliente()
+		{
+
+		}
+
+		internal Cliente(string nome, CPF cpf, DataNascimento dataNascimento)
+		{
+			this.DataNascimento = dataNascimento;
+			this.Nome = nome;
+			this.CPF = cpf;
+		}
+
+		internal Cliente(string nome, CPF cpf, DataNascimento dataNascimento, Filiacao pai, Filiacao mae) : this(nome, cpf, dataNascimento)
+		{
+			this.Mae = mae;
+			this.Pai = pai;
+		}
+
+
 		public int Id { get; set; }
 
 		public string Nome { get; set; }
@@ -62,6 +81,14 @@ namespace Domain.Cliente.Aggregate.Entity
 			}
 
 			this.Enderecos.Add(endereco);
+		}
+
+		public void AdicionarEnderecos(IList<Endereco> enderecos)
+		{
+			enderecos.ToList().ForEach(e =>
+			{
+				this.Enderecos.Add(e);
+			});
 		}
 
 		public void GerarPassword()
